@@ -5,10 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Experiment starter</title>
-    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <!-- You rock! -->
-    <script src="./js/script.js"></script>
+    <div class="wapper">
+      <div class="container">
+        <h1>Hello world</h1>
+      </div>
+    </div>
+
+    <script>
+      const timestamp = new Date().getTime();
+
+      // Add script dynamically
+      const script = document.createElement("script");
+      script.src = `./js/script.js?cache=${timestamp}`;
+      document.body.appendChild(script);
+
+      // Add stylesheet dynamically
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = `./css/style.css?cache=${timestamp}`;
+      document.head.appendChild(link);
+    </script>
   </body>
 </html>
